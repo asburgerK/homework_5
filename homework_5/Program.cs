@@ -7,35 +7,29 @@ namespace homework
 
     public class Program
     {
-        public static bool factorial(int n, out int result)
+        public static int factorial(int n)
         {
             try
             {
                 checked
                 {
-                    result = 1;
-                    if (n < 0)
-                    {
-                        return false;
-                    }
-                    for (int i = 1; i <= n; i++)
-                    {
-                        result *= i;
-                    }
-                    return true;
+                    if (n < 0) throw new ArgumentException("n < 0");
+                   if (n == 0 || n == 1) return 1;
+                    return n * factorial(n - 1);
+
                 }
             }
             catch (OverflowException)
             {
-                result = 0;
-                return false;
+                
+                return 0;
+                
             }
         }
 
         static void Main()
         {
-            Console.WriteLine(factorial(5, out int result));
-            Console.WriteLine(result);
+            Console.WriteLine(factorial(5));
         }
     }
 }
