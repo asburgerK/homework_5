@@ -90,52 +90,51 @@ namespace homework_5
                 sum += n;
             average = (double)sum / numbers.Length;
         }
-        
 
-        static void Main(string[] args)
-        {
-            Random rnd = new Random();
-            int[] arr = new int[20];
 
-            Console.WriteLine("Массив: ");
-            for (int i = 0; i < arr.Length; i++)
+            static void Main(string[] args)
             {
-                arr[i] = rnd.Next(1, 10001);
-                Console.Write(arr[i] + " ");
-            }
-            Console.WriteLine();
+                Random rnd = new Random();
+                int[] arr = new int[20];
 
-            
-            int a = int.Parse(Console.ReadLine());
-            
-            int b = int.Parse(Console.ReadLine());
-
-            Swap(arr, a, b);
-
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write(arr[i] + " ");
-            }
+                Console.WriteLine("Массив: ");
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    arr[i] = rnd.Next(1, 10001);
+                    Console.Write(arr[i] + " ");
+                }
+                Console.WriteLine();
 
 
-            //2 
-            int[] arr2 = {2,4 ,6, 8,10 };
+                int a = int.Parse(Console.ReadLine());
+                int b = int.Parse(Console.ReadLine());
 
-            Console.WriteLine("Сумма: " + Sum(arr2));
-            Console.WriteLine();
+                Swap(arr, a, b);
 
-            long product = 0;
+                for (int i = 0; i < arr.Length; i++)
+                {
+                    Console.Write(arr[i] + " ");
+                }
 
-            Product(ref arr2, ref product);
-            Console.WriteLine(product);
 
-            Average(arr, out double avg);
-            Console.WriteLine(avg);
+                //2 
+                int[] arr2 = { 2, 4, 6, 8, 10 };
 
-            //3
+                Console.WriteLine("Сумма: " + Sum(arr2));
+                Console.WriteLine();
 
-            string[] Digits =
-            {
+                long product = 0;
+
+                Product(ref arr2, ref product);
+                Console.WriteLine(product);
+
+                Average(arr, out double avg);
+                Console.WriteLine(avg);
+
+                //3
+
+                string[] Digits =
+                {
 
                             "#####\n#   #\n#   #\n#   #\n#   #\n#   #\n#####",
             "  #  \n ##  \n  #  \n  #  \n  #  \n  #  \n#####",
@@ -149,44 +148,44 @@ namespace homework_5
             "#####\n#   #\n#   #\n#####\n    #\n    #\n#####"
 
             };
-            while (true)
-            {
-                Console.WriteLine("Введите номер числа"); 
-                string input1 = Console.ReadLine();
-                if (input1 == "exit" || input1 == "закрыть")
-                    break;
-                if (!int.TryParse(input1, out int number))
+                while (true)
                 {
-                    Console.WriteLine("Не число");
-                }
-                else if (number < 0 || number > 9)
-                {
+                    Console.WriteLine("Введите номер числа");
+                    string input1 = Console.ReadLine();
+                    if (input1 == "exit" || input1 == "закрыть")
+                        break;
+                    if (!int.TryParse(input1, out int number))
+                    {
+                        Console.WriteLine("Не число");
+                    }
+                    else if (number < 0 || number > 9)
+                    {
                         Console.ForegroundColor = ConsoleColor.Red;
                         Console.WriteLine("Число вне диапазона");
                         Console.ResetColor();
                         Thread.Sleep(3000);
-                        Console.Clear();   
-                }
-                else
-                {
-                    Console.WriteLine(Digits[number]);
-                }
-                Console.WriteLine();
-                
+                        Console.Clear();
+                    }
+                    else
+                    {
+                        Console.WriteLine(Digits[number]);
+                    }
+                    Console.WriteLine();
 
 
-            }
+
+                }
 
                 //4
                 string[] badWords = { "Проститутки!", "Гады!", "Чёрт!", "Проклятые!" };
 
                 Grandpa[] grandpas =
                 {
-            new Grandpa("Иван",    GrumpinessLevel.Средний,     "Проститутки!", "Гады!", "Опять соседи шумят"),
-            new Grandpa("Пётр",    GrumpinessLevel.Высокий,     "Чёрт!", "Опять эти голуби"),
-            new Grandpa("Николай", GrumpinessLevel.Низкий,      "Хорошо бы чайку"),
-            new Grandpa("Семён",   GrumpinessLevel.Легендарный, "Проститутки!", "Гады!", "Проклятые!", "Чёрт!", "Всё не так!"),
-            
+            new Grandpa("Иван",GrumpinessLevel.Средний, "Проститутки!", "Гады!", "Опять соседи шумят"),
+            new Grandpa("Пётр",GrumpinessLevel.Высокий, "Чёрт!", "Опять эти голуби"),
+            new Grandpa("Николай", GrumpinessLevel.Низкий, "Хорошо бы чайку"),
+            new Grandpa("Семён", GrumpinessLevel.Легендарный, "Проститутки!", "Гады!", "Проклятые!", "Чёрт!", "Всё не так!"),
+
         };
                 foreach (var grandpa in grandpas)
                 {
@@ -194,7 +193,7 @@ namespace homework_5
                 }
 
 
-
+            }
             }
         }
 }
